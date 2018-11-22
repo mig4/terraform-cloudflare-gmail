@@ -24,4 +24,5 @@ resource "cloudflare_record" "spf" {
   name = "${var.sub_domain}"
   type = "TXT"
   value = "v=spf1 include:_spf.google.com ~all"
+  ttl = "${var.ttl}"
 }
