@@ -2,18 +2,21 @@
 
 _terraform-cloudflare-gmail_ manages MX and SPF records for Gmail on your CloudFlare-hosted domain.
 
+For example, the following configuration will generate the appropriate DNS records for the domain `example.com`:
+
+```hcl
+module "email" {
+  source = "gnarea/gmail/cloudflare"
+
+  domain = "example.com"
+}
+```
+
 ## Migrating from terraform-gmail
 
 Migrating from [terraform-gmail](https://github.com/gnarea/terraform-gmail) is easy:
 
-1. Change your module's source to `"gnarea/gmail/cloudflare"`. For example:
-   ```hcl
-   module "email" {
-     source = "gnarea/gmail/cloudflare"
-
-     domain = "example.com"
-   }
-   ```
+1. Change your module's source to `"gnarea/gmail/cloudflare"`, as in the example above.
 1. Rename the resources for the MX records (assuming you named your module `email`):
    ```
    terraform state mv module.email.cloudflare_record.main[0] module.email.cloudflare_record.mx[0]
