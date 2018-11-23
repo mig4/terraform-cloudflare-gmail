@@ -4,7 +4,7 @@ _terraform-cloudflare-gmail_ manages MX and SPF records for Gmail on your CloudF
 
 ## Migrating from terraform-gmail
 
-Migrating from [https://github.com/gnarea/terraform-gmail](terraform-gmail) is easy:
+Migrating from [terraform-gmail](https://github.com/gnarea/terraform-gmail) is easy:
 
 1. Change your module's source to `"gnarea/gmail/cloudflare"`. For example:
    ```hcl
