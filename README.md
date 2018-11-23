@@ -15,7 +15,7 @@ Migrating from [terraform-gmail](https://github.com/gnarea/terraform-gmail) is e
    }
    ```
 1. Rename the resources for the MX records (assuming you named your module `email`):
-   ```hcl
+   ```bash
    terraform state mv module.email.cloudflare_record.main[0] module.email.cloudflare_record.mx[0]
    terraform state mv module.email.cloudflare_record.main[1] module.email.cloudflare_record.mx[1]
    terraform state mv module.email.cloudflare_record.main[2] module.email.cloudflare_record.mx[2]
